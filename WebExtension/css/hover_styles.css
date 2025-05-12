@@ -1,0 +1,80 @@
+/* Demonstrating a simple mouseover effect */
+/*div:hover {*/
+/*  background-color: lightgray;*/
+/*}*/
+
+/*img:hover {*/
+/*  background-color: lightgreen;*/
+/*}*/
+
+img.hot {
+  background-color: red;
+  /*border-image-outset: 20px;*/
+  /*width: 110% !important;*/
+  border-radius: 10px;
+  /*opacity: 0.5;*/
+}
+
+.xifr_label {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #F55;
+}
+
+.hot_image {
+  position: relative;
+}
+
+.hot_image::after {
+  content: 'Label';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.top-left {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  color: white;
+}
+
+.top-right {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  color: white;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  color: white;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+
+/* creating the top overlay */
+.overlay-top {
+  top: -100%;
+  left: 0;
+}
+
+.container:hover .overlay-top {
+  top: 0;
+}

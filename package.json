@@ -1,14 +1,41 @@
 {
-  "name": "$name$",
-  "version": "$version$",
-  "description": "$END$",
-  "main": "$main$",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tolland/xIFr.git"
-  },
-  "private": true
+    "name": "xifr-plus",
+    "type": "module",
+    "version": "0.1.0",
+    "description": "image metadata viewer based on xIFr",
+    "main": "index.js",
+    "scripts": {
+        "build": "rollup -c --bundleConfigAsCjs",
+        "dev": "rollup -c -w --bundleConfigAsCjs",
+        "clean": "rimraf dist",
+        "prebuild": "npm run clean",
+        "type-check": "tsc --noEmit",
+        "type-check:watch": "tsc --noEmit --watch"
+    },
+    "dependencies": {
+        "@types/chrome": "^0.0.127",
+        "@types/firefox-webext-browser": "^120.0.4",
+        "exifreader": "^4.26.1",
+        "rimraf": "^6.0.1",
+        "rollup-plugin-copy": "^3.5.0",
+        "webextension-polyfill": "^0.7.0"
+    },
+    "devDependencies": {
+        "@openapitools/openapi-generator-cli": "^2.16.3",
+        "@rollup/plugin-commonjs": "^25.0.8",
+        "@rollup/plugin-json": "^6.1.0",
+        "@rollup/plugin-node-resolve": "^15.3.1",
+        "@rollup/plugin-typescript": "^11.1.6",
+        "@types/firefox-webext-browser": "^120.0.4",
+        "@types/node": "^22.13.1",
+        "openapi-typescript-codegen": "^0.29.0",
+        "prettier": "^2.8.8",
+        "rollup": "^4.34.6",
+        "rollup-plugin-chrome-extension": "^3.6.12",
+        "rollup-plugin-prettier": "^4.1.1",
+        "typescript": "^5.7.3",
+        "web-ext": "^8.6.0"
+    },
+    "private": true,
+    "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
 }

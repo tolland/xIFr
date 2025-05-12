@@ -1,59 +1,97 @@
 {
-  "manifest_version": 3,
-  "name": "xIFr",
-  "version": "2.99.99",
-  "default_locale": "en",
-
-  "description": "__MSG_extensionDescription__",
-  "author": "Stig Nygaard",
-  "homepage_url": "https://github.com/StigNygaard/xIFr",
-
-  "icons": {
-    "24": "icons/xIFr-24.png",
-    "32": "icons/xIFr-32.png",
-    "48": "icons/xIFr-48.png",
-    "64": "icons/xIFr-64.png",
-    "96": "icons/xIFr-96.png",
-    "128": "icons/xIFr-128.png",
-    "256": "icons/xIFr-256.png",
-    "512": "icons/xIFr-512.png"
-  },
-
-  "action" : {
-
-  },
-
-  "browser_specific_settings": {
-    "gecko": {
-      "strict_min_version": "127.0",
-      "id": "{5e71bed2-2b15-40b8-a15b-ba89563aaf73}"
+    "manifest_version": 3,
+    "name": "xifr-plus",
+    "version": "0.1.0",
+    "default_locale": "en",
+    "icons": {
+        "64": "icons/xIFr-64.png"
+    },
+    "action": {
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "strict_min_version": "127.0",
+            "id": "{85faeeac-16d1-448e-8f7b-a6841b153d80}"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.civitai.com/*"
+            ],
+            "js": [
+                "content-script.js"
+            ],
+            "css": [
+                "css/hover_styles.css"
+            ]
+        }
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "permissions": [
+        "contextMenus",
+        "management",
+        "menus",
+        "notifications",
+        "scripting",
+        "storage",
+        "tabs"
+    ],
+    "optional_permissions": [
+    ],
+    "page_action": {
+        "default_icon": {
+            "64": "icons/icon.png"
+        },
+        "default_popup": "pageAction/index.html",
+        "default_title": "my-stupid-extension-01",
+        "show_matches": [
+            "*://civitai.com/*",
+            "*://*.civitai.com/*"
+        ]
+    },
+    "background": {
+        "type": "module",
+        "scripts": [
+            "background.js"
+        ],
+        "service_worker": "background.js"
+    },
+    "options_ui": {
+        "page": "options/options.html",
+        "open_in_tab": true
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "utils/*",
+                "deepsearch/*",
+                "lib/*"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "sidebar_action": {
+        "default_title": "Imagify",
+        "default_panel": "sidebar/sidebar.html",
+        "open_at_install": false
+    },
+    "commands": {
+        "toggle-feature": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+U"
+            },
+            "description": "Send a 'toggle-feature' event to the extension"
+        },
+        "scan-images": {
+            "suggested_key": {
+                "default": "Shift+Alt+U"
+            },
+            "description": "Send a 'toggle-feature' event to the extension"
+        }
     }
-  },
-  "minimum_chrome_version": "121.0",
-  "minimum_opera_version": "107.0",
-  "minimum_edge_version": "121.0",
-
-  "host_permissions": [
-    "<all_urls>"
-  ],
-  "permissions": [
-    "scripting",
-    "contextMenus",
-    "menus",
-    "storage"
-  ],
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'none'"
-  },
-
-  "background": {
-    "scripts": ["backgroundscript.js"],
-    "service_worker": "backgroundscript.js",
-    "type": "module"
-  },
-
-  "options_ui": {
-    "page": "options/options.html",
-    "open_in_tab": true
-  }
 }

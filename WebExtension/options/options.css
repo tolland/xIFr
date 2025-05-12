@@ -1,38 +1,46 @@
-
 /* Dark or Light mode: */
 body.dark {
   background-color: #151515;
   color: rgb(220, 220, 220);
 }
+
 body.light {
   background-color: rgb(248, 248, 248);
   color: rgb(32, 32, 32);
 }
+
 body.dark form {
   background-color: rgb(43, 43, 43);
   color: rgb(220, 220, 220);
 }
+
 body.light form {
   background-color: rgb(255, 255, 255);
   color: rgb(32, 32, 32);
 }
+
 body.dark a, body.dark a:hover, body.dark a:active, body.dark a:visited {
   color: rgb(69, 161, 255);
 }
+
 body.dark input {
   background-color: rgb(43, 43, 43);
   color: white;
   border: 1px solid white;
 }
+
 body.light b.up {
   color: #900;
 }
+
 body.dark b.up {
   color: #F55;
 }
+
 body.light #deepSearchSettings b.up {
   color: #090;
 }
+
 body.dark #deepSearchSettings b.up {
   color: #5F5;
 }
@@ -42,54 +50,67 @@ body {
   margin-bottom: 3em;
   line-height: 1.5;
 }
+
 #xIFroptionspage {
   margin: 1em auto 1em auto;
   max-width: 980px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
+
 #version {
   float: right;
 }
+
 #logo {
   width: 128px;
   height: auto;
   margin: -10px 0 -30px 0;
 }
+
 #xIFroptionspage > p {
   margin-left: 1em;
 }
+
 .note {
   font-style: italic;
 }
+
 .up {
   font-style: normal;
   position: relative;
   top: -0.2em;
   margin: 0 .1em;
 }
+
 .ffo {
   display: none;
 }
+
 .isFirefox .ffo {
   display: revert;
 }
+
 .hideInFirefox {
   display: none;
 }
+
 .notFirefox .hideInFirefox {
   display: revert;
 }
+
 #hostPermissionsSettings img.status {
   display: block;
   float: right;
   width: 64px;
   margin: 0 1rem;
 }
+
 #hostPermissionsSettings.fullHostPermissions .fullHostPermissions,
 #hostPermissionsSettings.restrictedHostPermissions .restrictedHostPermissions,
 #hostPermissionsSettings.missingHostPermissions .missingHostPermissions {
   display: revert;
 }
+
 #hostPermissionsSettings.fullHostPermissions .restrictedHostPermissions,
 #hostPermissionsSettings.fullHostPermissions .missingHostPermissions,
 #hostPermissionsSettings.fullHostPermissions .notFullHostPermissions,
@@ -99,47 +120,85 @@ body {
 #hostPermissionsSettings.missingHostPermissions .restrictedHostPermissions {
   display: none;
 }
+
 #deepSearchSettings, #developerSettings {
   display: none;
 }
+
 .supportsDeepSearch #deepSearchSettings {
   display: revert;
 }
+
 .supportsDeepSearch #noDeepSearchSettings {
   display: none;
 }
+
 .developermode #developerSettings {
   display: revert;
 }
+
 #xIFroptions {
   padding: .4em;
   border-radius: .4em;
   box-shadow: rgba(12, 12, 13, 0.1) 0 1px 4px 0;
 }
+
 #xIFroptions fieldset {
   position: relative;
   margin: 0 0 .3em 0;
   padding-left: 1em;
   padding-right: 1em;
 }
+
 #xIFroptions input, #xIFroptions select, #xIFroptions textarea {
   font-family: inherit;
   font-size: 100%;
 }
+
 div.threeColumns > p:first-child {
   margin-top: 0;
 }
+
 legend + div.threeColumns {
   padding-top: 1em;
 }
+
 div.threeColumns {
   column-count: 3;
   column-fill: balance;
   margin-bottom: 1em;
 }
+
 .tagline {
   text-align: right;
 }
+
 .smaller {
   font-size: smaller;
+}
+
+div {
+  padding: 20px;
+  border: 1px solid black;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  background-color: lightblue; /* Make the image area visible */
+  display: block; /* Prevents small space below image */
+}
+
+.pointerEventsNone {
+  pointer-events: none;
+}
+
+
+/* Demonstrating a simple mouseover effect */
+div:hover {
+  background-color: lightgray;
+}
+
+img:hover {
+  background-color: lightgreen;
 }

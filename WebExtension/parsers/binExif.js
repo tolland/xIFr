@@ -157,7 +157,7 @@ function exifClass() {
     return start + 2 + entry * 12;
   }
 
-  function ConvertAnyFormat(data, format, offset, components, numbytes, swapbytes, charWidth) {
+  this.ConvertAnyFormat = function (data, format, offset, components, numbytes, swapbytes, charWidth) {
     // centralised check if the data lays within the data array
     if (offset + numbytes > data.length) {
       console.error("xIFr: Data outside array.");
@@ -176,8 +176,8 @@ function exifClass() {
           else
             value = fxifUtils.bytesToString(data, offset, numbytes, swapbytes, charWidth);
         } catch (e) {
-          context.debug("catch!");
-          value = fxifUtils.bytesToString(data, offset, numbytes, swapbytes, charWidth);
+          context.debug("catch!" + e);
+          value = fxifUtils.bytesToStringWithNull(data, offset, numbytes);
         }
         // strip trailing whitespace
         value = value.replace(/\s+$/, '');

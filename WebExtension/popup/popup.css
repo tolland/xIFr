@@ -1,271 +1,364 @@
-
 /* Dark or Light mode: */
 body.dark {
-  background-color: rgb(43, 43, 43);
-  color: rgb(249, 249, 249);
-  scrollbar-color: rgb(43, 43, 43) black;
+    background-color: rgb(43, 43, 43);
+    color: rgb(249, 249, 249);
+    scrollbar-color: rgb(43, 43, 43) black;
 }
+
 body.light {
-  background-color: #fff;
-  color: #242424;
+    background-color: #fff;
+    color: #242424;
 }
-body.dark img#settings, body.dark img#cpClipboard{
-  filter: invert(100%) ;
+
+body.dark img#settings, body.dark img#cpClipboard {
+    filter: invert(100%);
 }
+
 body.dark #tabs {
-  background-color: black;
-  color: rgba(249, 249, 249, 0.8);
+    background-color: black;
+    color: rgba(249, 249, 249, 0.8);
 }
+
 body.light #tabs {
-  background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
+
 body.dark #tabs button, body.mainmode.dark #maintab, body.mapmode.dark #maptab {
-  color: white;
+    color: white;
 }
+
 body.dark a, body.dark a:hover, body.dark a:active, body.dark a:visited {
-  color: rgb(69, 161, 255);
+    color: rgb(69, 161, 255);
 }
+
 body.dark #tabs button:hover {
-  background-color: rgb(29, 29, 29);
+    background-color: rgb(29, 29, 29);
 }
+
 body.light #tabs button:hover {
-  background-color: #f8f8f8;
+    background-color: #f8f8f8;
 }
+
 body.dark.mapmode #maptab, body.dark.mainmode #maintab {
-  background-color: rgb(43, 43, 43);
+    background-color: rgb(43, 43, 43);
 }
+
 body.light.mapmode #maptab, body.light.mainmode #maintab {
-  background-color: #fff;
+    background-color: #fff;
 }
+
 body.dark #data tr:hover {
-  background-color: rgb(49, 49, 49);
+    background-color: rgb(49, 49, 49);
 }
+
 body.light #data tr:hover {
-  background-color: rgb(248, 248, 248);
+    background-color: rgb(248, 248, 248);
 }
+
 body.dark #data tr.clickable:hover {
-  color: #FD2;
+    color: #FD2;
 }
+
 body.light #data tr.clickable:hover {
-  background-color: #FFFADF;
+    background-color: #FFFADF;
 }
 
 
 /* General layout and visibility: */
 html, body {
-  box-sizing: border-box;
-  margin: 0;
-  overflow: auto;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
+
 body {
-  cursor: default;
-  font: caption;
-  font-size: 14px;
+    cursor: default;
+    font: caption;
+    font-size: 14px;
 }
+
 #main {
-  padding: 1.5rem 1.3em .5rem 1.5rem;
-  height: auto;
-  background-image: url("../icons/xIFr-32.png");
-  background-position: right 1.3rem top 1.5rem;
-  background-repeat: no-repeat;
+    padding: 1.5rem 1.3em .5rem 1.5rem;
+    height: auto;
+    background-image: url("../icons/xIFr-32.png");
+    background-position: right 1.3rem top 1.5rem;
+    background-repeat: no-repeat;
 }
-img#settings, img#cpClipboard {
-  display: block;
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  border: none;
-  padding: 0;
-  margin: 0;
-  opacity: 0.2;
-  right: 1.3rem;
-  bottom: .5rem;
-  cursor: pointer;
+
+img#settings, img#cpClipboard, img#acDownload {
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    opacity: 0.2;
+    right: 1.3rem;
+    bottom: .8rem;
+    cursor: pointer;
 }
+
 img#cpClipboard {
-  right: 3rem;
+    right: 3rem;
 }
+
+img#acDownload {
+    right: 4.7rem;
+}
+
 body.mapmode img#cpClipboard, body.copyUnsupported img#cpClipboard {
-  display: none;
+    display: none;
 }
+
 #map {
-  height: calc(100% - 5rem); /* room for the larger-map link */
-  padding: 0;
+    height: calc(100% - 5rem); /* room for the larger-map link */
+    padding: 0;
 }
+
 .mainmode #main, .mapmode #map {
-  display: block;
+    display: block;
 }
+
 .mainmode #map, .mapmode #main {
-  display: none;
+    display: none;
 }
+
 #map iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  margin: 0;
-  padding: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
 }
+
 #image, #properties {
-  position: relative;
-  margin: 0 0 1ch 0;
-  overflow: hidden;
+    position: relative;
+    margin: 0 0 1ch 0;
+    overflow: hidden;
 }
+
 #filename {
-  white-space: nowrap;
+    white-space: nowrap;
 }
+
 #orig_shown {
-  display: none;
-  font-style: italic;
-  white-space: nowrap;
+    display: none;
+    font-style: italic;
+    white-space: nowrap;
 }
-#image /* , #properties */ {
-  float: left;
-  margin-right: 1rem;
+
+#image /* , #properties */
+{
+    float: left;
+    margin-right: 1rem;
 }
+
 #image #thumbnail {
-  width: auto;
-  height: auto;
-  max-width: 200px;
-  max-height: 200px;
-  border: 1px solid #777;
-  margin: 0;
-  padding: 0;
-  display: block;
-  background-image: url("../icons/background.png");
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    max-height: 200px;
+    border: 1px solid #777;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-image: url("../icons/background.png");
 }
+
 #image #flickrlogo {
-  display: none;
-  position: absolute;
-  right: 2px;
-  top: 2px;
-  width: 25px;
-  border-radius: 50%;
-  border: 1px solid #000;
+    display: none;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid #000;
 }
+
 #image a[href^="https://"] #flickrlogo {
-  display: block;
+    display: block;
 }
+
 #image #flickrlogo.gray {
-  filter: grayscale(100%);
+    filter: grayscale(100%);
 }
+
 #messages {
-  margin: 1ch 0;
-  clear: both;
-  display: none;
+    margin: 1ch 0;
+    clear: both;
+    display: none;
 }
+
 #messages img {
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: 16px;
-  height: 16px;
-  vertical-align: sub;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    vertical-align: sub;
 }
+
 #data {
-  margin: 1ch 0 0 0;
-  clear: both;
-  width: 100%;
-  border: none;
-  padding: 0;
-  border-collapse: collapse;
+    margin: 1ch 0 0 0;
+    clear: both;
+    width: 100%;
+    border: none;
+    padding: 0;
+    border-collapse: collapse;
 }
+
 #data .labels {
-  width: 19ch;
+    width: 19ch;
+    font-weight: bold;
 }
+
 #data tr.scsv td:last-child {
-  /*overflow: hidden;*/
-  /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
 }
+
 #data tr.notice td:first-child::after {
-  content: " †";
+    content: " †";
 }
+
 #data td {
-  vertical-align: top;
-  padding: 2px 1px;
+    vertical-align: top;
+    padding: 2px 1px;
 }
+
 #data td:first-child {
-  padding-right: .5rem;
+    padding-right: .5rem;
 }
+
 .expandable {
-  display: none;
+    display: none;
 }
+
 .expandGps .expandable.gps, .expandSoftware .expandable.software {
-  display: inline;
+    display: inline;
 }
+
 #maplinks {
-  margin: 0;
-  padding: 0;
-  border: none;
-  float: right;
-  width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    float: right;
+    width: auto;
 }
+
 #maplinks > div {
-  float: left;
-  color: white;
-  width: 16px;
-  height: 16px;
-  border: none;
-  padding: 0;
-  margin: 0 0 0 .5ch;
-  background-image: url("../icons/globe-32.png");
-  background-size: 16px 16px;
+    float: left;
+    color: white;
+    width: 16px;
+    height: 16px;
+    border: none;
+    padding: 0;
+    margin: 0 0 0 .5ch;
+    background-image: url("../icons/globe-32.png");
+    background-size: 16px 16px;
 }
+
 #maplinks > div > a {
-  position: relative;
-  float: left;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  font-weight: bold;
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
 }
+
 #maplinks a, #maplinks a:hover, #maplinks a:active, #maplinks a:visited {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
+
 body.copypastemode #maplinks {
-  display: none;
+    display: none;
 }
+
 .OSM, .Google, .Bing, .MapQuest, .Here, .Flickr, .GeoHack {
-  display: none;
+    display: none;
 }
+
 .showOSM .OSM, .showGoogle .Google, .showBing .Bing, .showMapQuest .MapQuest, .showHere .Here, .showFlickr .Flickr, .showGeoHack .GeoHack {
-  display: block;
+    display: block;
 }
+
 body.mainmode #maptab.disabled {
-  color: transparent;
-  cursor: inherit;
+    color: transparent;
+    cursor: inherit;
 }
 
 /* Tabs: */
 #tabs {
-  overflow: hidden;
-  border: none;
-  min-width: 25rem;
-  position: relative;
+    overflow: hidden;
+    border: none;
+    min-width: 25rem;
+    position: relative;
 }
+
 #tabs button {
-  background: transparent;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  width: 12rem;
+    background: transparent;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    width: 12rem;
 }
+
 .mapmode #maptab, .mainmode #maintab {
-  font-weight: bold;
+    font-weight: bold;
 }
+
 .mapmode #maptab:focus, .mainmode #maintab:focus {
-  outline: none; /* why doesn't this work ? */
+    outline: none; /* why doesn't this work ? */
 }
+
 #maintab, #maptab {
-  animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
 }
+
 @keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*.code_block {*/
+/*    margin: 20px;*/
+/*    padding: 0;*/
+/*    border: none;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    overflow: auto;*/
+/*    background: #FFFADF;*/
+/*    color: #242424;*/
+/*}*/
+
+code {
+    white-space: pre;
+    font-family: Consolas, monospace;
+
+    .string {
+        color: maroon;
+    }
+    .number {
+        color: #FF5555;
+    }
+    .boolean,
+    .null {
+        color: blue;
+    }
+    .key {
+        color: teal;
+    }
 }

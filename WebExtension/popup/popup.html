@@ -6,29 +6,40 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body class="mainmode">
-  <img id="cpClipboard" src="../icons/copytext-48.png" alt="Copy" title="Copy to clipboard" />
-  <img id="settings" src="../icons/wheel-48.png" alt="Options" title="Options" />
-  <div id="tabs">
-    <button id="maintab" accesskey="i"> Image data </button>  <!-- Add an icon ? -->
-    <button id="maptab" accesskey="m"> Map </button>  <!-- Add an icon ? -->
+<img id="acDownload" src="../icons/material-symbols--download-64.png" alt="Download" title="Download to computer" />
+<img id="cpClipboard" src="../icons/copytext-48.png" alt="Copy" title="Copy to clipboard" />
+<img id="settings" src="../icons/wheel-48.png" alt="Options" title="Options" />
+<div id="tabs">
+  <button id="maintab" accesskey="i"> Image data</button>  <!-- Add an icon ? -->
+  <button id="maptab" accesskey="m"> Map</button>  <!-- Add an icon ? -->
+</div>
+<div id="main">
+  <div id="image">
+    <a href="#"><img src="../icons/flickr-dots-128.png" alt="" id="flickrlogo"
+                     title="Image is hosted by Flickr. Click to lookup Flickr photopage..." /></a>
+    <img src="" alt="" id="thumbnail" />
   </div>
-  <div id="main">
-    <div id="image">
-      <a href="#"><img src="../icons/flickr-dots-128.png" alt="" id="flickrlogo" title="Image is hosted by Flickr. Click to lookup Flickr photopage..." /></a>
-      <img src="" alt="" id="thumbnail" />
-    </div>
-    <div id="properties"><b><a href="" id="filename" title=""></a></b>
-      <span title="Content-type reported by server"><br />Content-type: <span id="contenttype"></span></span>
-      <span title="Size might not be accurate"><br />Size: <span id="imgsize"></span> bytes (<span id="imgsize2"></span>)</span>
-      <span title="Modified date reported by server"><br />Last modified: <span id="lastmodified"></span></span>
-      <span><br />Dimensions: <span id="dimensions"></span></span>
-      <span id="orig_shown"><br />Image shown on page: <a href="" title="" id="orig_filename"></a> <span id="orig_type"></span></span>
-    </div>
-    <div id="messages"></div>
-    <table id="data"><colgroup><col class="labels" /><col /></colgroup></table>
+  <div id="properties"><b><a href="" id="filename" title=""></a></b>
+    <span title="Content-type reported by server"><br />Content-type: <span id="contenttype"></span></span>
+    <span title="Size might not be accurate"><br />Size: <span id="imgsize"></span> bytes (<span
+      id="imgsize2"></span>)</span>
+    <span title="Modified date reported by server"><br />Last modified: <span id="lastmodified"></span></span>
+    <span><br />Dimensions: <span id="dimensions"></span></span>
+    <span id="orig_shown"><br />Image shown on page: <a href="" title="" id="orig_filename"></a> <span
+      id="orig_type"></span></span>
   </div>
-  <div id="map"><iframe sandbox="allow-scripts allow-popups" id="osmap" src=""></iframe><br/>&nbsp;<small><a href="#" id="largermap">View Larger Map</a></small></div>
-  <script src="../context.js"></script>
-  <script src="popup.js"></script>
+  <div id="messages"></div>
+  <table id="data">
+    <colgroup>
+      <col class="labels" />
+      <col />
+    </colgroup>
+  </table>
+</div>
+<div id="map">
+  <iframe sandbox="allow-scripts allow-popups" id="osmap" src=""></iframe>
+  <br />&nbsp;<small><a href="#" id="largermap">View Larger Map</a></small></div>
+<script src="../context.js"></script>
+<script type="module" src="popup.js"></script>
 </body>
 </html>

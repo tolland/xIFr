@@ -5,7 +5,11 @@
   },
 
   "contextMenuText": {
-    "message": "View E&XIF data"
+    "message": "View E&XIF data (xIFr)"
+  },
+
+  "contextMenuTextShowInfos": {
+    "message": "View cache data (xIFr)"
   },
 
   "Copy": {
