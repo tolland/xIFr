@@ -8,21 +8,21 @@
 globalThis.browser ??= chrome;
 
 globalThis.stringBundle = globalThis.stringBundle || {
-  getString(string) {
-    const translate = browser.i18n.getMessage(string);
-    // WebExtension docs are lying here
-    if (typeof translate === "undefined" || translate === "??" || translate === "") {
-      return string;
-    } else {
-      return translate;
-    }
-  },
-  getFormattedString(string, val) {
-    const xlat = stringBundle.getString(string);
-    if (xlat !== string) {
-      return val + xlat;
-    } else {
-      return string + "=" + val;
-    }
-  }
+    getString(string) {
+        const translate = browser.i18n.getMessage(string);
+        // WebExtension docs are lying here
+        if (typeof translate === 'undefined' || translate === '??' || translate === '') {
+            return string;
+        } else {
+            return translate;
+        }
+    },
+    getFormattedString(string, val) {
+        const xlat = stringBundle.getString(string);
+        if (xlat !== string) {
+            return val + xlat;
+        } else {
+            return string + '=' + val;
+        }
+    },
 };
