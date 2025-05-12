@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "ES2020",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "allowJs": true,
+        "checkJs": false,
+        "jsx": "preserve",
+        "strict": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "outDir": "./dist",
+        "types": [
+            "firefox-webext-browser"
+        ],
+        "paths": {
+            "*": [
+                "node_modules/*"
+            ],
+            "@models/*": [
+                "src/models/*"
+            ]
+        },
+        "declaration": true,
+        "declarationDir": "./dist/types",
+        "sourceMap": true
+    },
+    "include": [
+        "WebExtension/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
+

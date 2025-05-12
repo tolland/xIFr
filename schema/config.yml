@@ -1,0 +1,34 @@
+---
+
+## library: asyncio
+#inline schema name mappings
+generatorName: python
+outputDir: generated
+# enablePostProcessFile: "true"
+# templateDir: schema/templates
+#additionalProperties:
+#  serializableModel: "true"
+#files:
+#  model_generic.mustache:
+#    templateType: Model
+#    destinationFilename: .py
+useOneOfDiscriminatorLookup: "true"
+modelNameMappings:
+  CfgScale: CFGScale
+  CLIPLEmbedDiffusersConfig: CustomCLIPLEmbedDiffusersConfig
+  CLIPGEmbedDiffusersConfig: CustomCLIPGEmbedDiffusersConfig
+  CLIPEmbedDiffusersConfig: CustomCLIPEmbedDiffusersConfig
+
+#        --schema-mappings <schema mappings>
+#            specifies mappings between the schema and the new name in the format
+#            of schema_a=Cat,schema_b=Bird. You can also have multiple
+#            occurrences of this option.
+
+#        --remove-operation-id-prefix
+#            Remove prefix of operationId, e.g. config_getId => getId
+
+#        --skip-operation-example
+#            Skip examples defined in operations to avoid out of memory errors.
+#
+#        --skip-validate-spec
+#            Skips the default behavior of validating an input specification.
